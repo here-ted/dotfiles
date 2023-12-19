@@ -1,0 +1,41 @@
+# 修改了以下配置!
+# 开机自启
+start-at-login = true
+
+# 修改堆叠模式的快捷键为option - ;(option键加上分号键), 跟后续的快捷键保持一致
+#alt-comma = 'layout accordion horizontal vertical'
+alt-semicolon = 'layout accordion horizontal vertical'
+  
+# 堆叠模式下窗口留白, 可以显示堆叠下的窗口, 推荐设置为0, 不显示
+# The 'accordion-padding' specifies the size of accordion padding
+# You can set 0 to disable the padding feature
+#accordion-padding = 30
+accordion-padding = 0
+
+# 默认布局模式, 推荐堆叠, 需要并行操作多个窗口时再手动平铺
+# Possible values: tiles|accordion
+default-root-container-layout = 'accordion'
+
+# 增加了以下配置!
+# 分配工作空间, 一个工作空间对应一个屏幕, 同时把a-z 的快捷键都注释掉了, 0-9已经够用
+[workspace-to-monitor-force-assignment]
+0 = 'main'
+1 = 'secondary'
+2 = 'HDMI'
+
+# 新窗口打开后的回调函数
+# 使各类「设置」界面自动悬浮：
+[[on-window-detected]]
+if.window-title-regex-substring = '(setting|设置)'
+run = 'layout floating'
+
+# 使 Chrome 和 Firefox 等浏览器的画中画窗口自动悬浮：
+[[on-window-detected]]
+if.window-title-regex-substring = '(Picture-in-Picture|画中画)'
+run = 'layout floating'
+
+# 使微信所有窗口设为自动悬浮：
+[[on-window-detected]]
+if.app-id = 'com.tencent.xinWeChat'
+#if.window-title-regex-substring = '^(?!WeChat \(Chats\)|微信 \(聊天\)).*$'
+run = 'layout floating'
