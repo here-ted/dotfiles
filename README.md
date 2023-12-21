@@ -5,4 +5,5 @@
 ## 目录
 |文件|介绍|
 |---|---|
-|.aerospace.toml|窗口管理https://github.com/nikitabobko/AeroSpace|
+|[.aerospace.toml](./.aerospace.toml)|窗口管理, https://github.com/nikitabobko/AeroSpace|
+|[.vimrc](./.vimrc)|vim 配置文件, 执行source .vimrc 刷新配置, 忽略报错|
