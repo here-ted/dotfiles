@@ -5,16 +5,21 @@ start-at-login = true
 # 修改堆叠模式的快捷键为option - ;(option键加上分号键), 跟后续的快捷键保持一致
 #alt-comma = 'layout accordion horizontal vertical'
 alt-semicolon = 'layout accordion horizontal vertical'
-  
-# 堆叠模式下窗口留白, 可以显示堆叠下的窗口, 推荐设置为0, 不显示
+
+# 堆叠模式下窗口留白, 可以显示堆叠下的窗口, 方便快捷键切换. 设置为0或者50
 # The 'accordion-padding' specifies the size of accordion padding
 # You can set 0 to disable the padding feature
 #accordion-padding = 30
-accordion-padding = 0
+accordion-padding = 50
 
 # 默认布局模式, 推荐堆叠, 需要并行操作多个窗口时再手动平铺
 # Possible values: tiles|accordion
 default-root-container-layout = 'accordion'
+
+# 调整窗口大小, 平铺布局下有效
+alt-shift-minus = 'resize smart -50'
+#alt-shift-equal = 'resize smart +50'
+alt-shift-equal = 'resize smart +100'
 
 # 增加了以下配置!
 # 分配工作空间, 一个工作空间对应一个屏幕, 同时把a-z 的快捷键都注释掉了, 0-9已经够用
@@ -39,3 +44,4 @@ run = 'layout floating'
 if.app-id = 'com.tencent.xinWeChat'
 #if.window-title-regex-substring = '^(?!WeChat \(Chats\)|微信 \(聊天\)).*$'
 run = 'layout floating'
+
