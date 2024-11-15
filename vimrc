@@ -1,3 +1,5 @@
+"关闭兼容模式(可以鼠标操作等)
+set nocompatible
 "语法高亮
 syntax on
 syntax enable
@@ -13,22 +15,24 @@ set noswapfile
 set showmatch
 "设置编码
 set encoding=utf-8
-"总端颜色256
+set fileencoding=utf-8
+"终端颜色256
 set t_Co=256
+"set termguicolors
 "共享系统剪贴板
-set clipboard^=unnamed,unnamedplus
+"set clipboard^=unnamed,unnamedplus
 "显示行号
 set number
 "显示相对行号
 set relativenumber
 "历史记录条数
-set history=2000
-"关闭兼容模式
-set nocompatible
+set history=1024
 "退格键可以删除缩进,行尾和起始位置字符
 set backspace=indent,eol,start
-"开启增量搜索
-"set incsearch
+"不增量搜索
+set noincsearch
+"不循环搜索
+set nowrapscan
 "搜索结果高亮
 set hlsearch
 "忽略大小写搜索
@@ -45,33 +49,32 @@ set ruler
 set cursorline
 "禁止换行
 set nowrap
+"自动缩进
+set autoindent
 "空格键代替制表符进行缩进
 set expandtab
 "制表符为2个字符
 set tabstop=2
 "按下制表符移动4个字符
-set shiftwidth=4
+set shiftwidth=2
 "软表符()宽度为2
 set softtabstop=2
 "缩进代替折叠代码块
 set foldmethod=indent
 "根据语法折叠代码块
-set foldmethod=syntax
+"set foldmethod=syntax
 "禁用代码折叠
 set nofoldenable
-"自动缩进
-set autoindent
+
 "GUI 模式下字体
-set guifont=courier_new:h20
+"set guifont=courier_new:h20
 "set go+=b
-"不增量搜索
-set noincsearch
-"不循环搜索
-set nowrapscan
 "if has("gui_running")
   "colorscheme macvim
   "set bs=2
 "endif
 
-"s 关闭搜索高亮
-map s :noh<CR>
+"搜索高亮
+nnoremap <C-s> :set hlsearch!<CR>
+"行号显示
+nnoremap <C-p> :set number! relativenumber!<CR>
